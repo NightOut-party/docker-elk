@@ -9,6 +9,9 @@ heartbeat.monitors:
   schedule: '@every 5s'
   urls:
     - http://elasticsearch:9200
+    - https://api.dev.nightout.party/health
+    - https://web.dev.nightout.party/#/health
+    - https://dev.nightout.party
   username: heartbeat_internal
   password: ${HEARTBEAT_INTERNAL_PASSWORD}
 
