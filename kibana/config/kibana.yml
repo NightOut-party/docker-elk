@@ -4,6 +4,7 @@
 #
 server.name: kibana
 server.host: 0.0.0.0
+server.publicBaseUrl: https://dev.nightout.party:5601
 elasticsearch.hosts: [ http://elasticsearch:9200 ]
 
 monitoring.ui.container.elasticsearch.enabled: true
@@ -79,3 +80,7 @@ xpack.fleet.agentPolicies:
                 value: 0.0.0.0:8200
               - name: url
                 value: http://apm-server:8200
+
+xpack.encryptedSavedObjects.encryptionKey: ${XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY}
+xpack.reporting.encryptionKey: ${XPACK_REPORTING_ENCRYPTIONKEY}
+xpack.security.encryptionKey: ${XPACK_SECURITY_ENCRYPTIONKEY}
