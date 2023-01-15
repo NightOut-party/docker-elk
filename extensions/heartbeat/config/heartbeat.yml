@@ -6,14 +6,30 @@ name: heartbeat
 
 heartbeat.monitors:
 - type: http
+  name: Elasticsearch
   schedule: '@every 5s'
   urls:
     - http://elasticsearch:9200
-    - https://api.dev.nightout.party/health
-    - https://web.dev.nightout.party/#/health
-    - https://dev.nightout.party
   username: heartbeat_internal
   password: ${HEARTBEAT_INTERNAL_PASSWORD}
+
+- type: http
+  schedule: '@every 10s'
+  name: NightOut API
+  urls:
+    - https://api.dev.nightout.party/health
+
+- type: http
+  schedule: '@every 10s'
+  name: NightOut Web
+  urls:
+    - https://web.dev.nightout.party/#/health
+
+- type: http
+  schedule: '@every 10s'
+  name: NightOut Landing
+  urls:
+    - https://dev.nightout.party
 
 - type: icmp
   schedule: '@every 5s'
