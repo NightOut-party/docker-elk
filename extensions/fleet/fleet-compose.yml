@@ -22,7 +22,7 @@ services:
       #FLEET_SERVER_SERVICE_TOKEN: <service_token>
     ports:
       - 8220:8220
-    hostname: fleet-server
+    hostname: dev.nightout.party
     # Elastic Agent does not retry failed connections to Kibana upon the initial enrollment phase.
     restart: on-failure
     networks:
